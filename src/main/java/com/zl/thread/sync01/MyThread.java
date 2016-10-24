@@ -1,4 +1,4 @@
-package com.zl.thread;
+package com.zl.thread.sync01;
 
 /**
  * 线程安全概念：当多个线程访问某一个类（对象或方法）时，这个对象始终都能表现出正确的行为，那么这个类（对象或方法）就是线程安全的。
