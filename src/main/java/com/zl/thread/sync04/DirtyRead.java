@@ -22,7 +22,10 @@ public class DirtyRead {
 		
 		System.out.println("setValue最终结果：username = " + username + " , password = " + password);
 	}
-	
+
+	/**
+	 * 也需要用synchronize修饰
+	 */
 	public void getValue(){
 		System.out.println("getValue方法得到：username = " + this.username + " , password = " + this.password);
 	}
