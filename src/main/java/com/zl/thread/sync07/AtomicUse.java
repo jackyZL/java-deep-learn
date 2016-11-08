@@ -23,7 +23,7 @@ public class AtomicUse {
 			count.addAndGet(1);
 			count.addAndGet(2);
 			count.addAndGet(3);
-			count.addAndGet(4); //+10
+			count.addAndGet(4); //+10 整数加10,如果不加synchronized修饰，不能保证每次加10
 			return count.get();
 	}
 	
