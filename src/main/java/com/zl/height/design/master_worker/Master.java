@@ -42,7 +42,7 @@ public class Master {
 	//7 判断是否运行结束的方法
 	public boolean isComplete() {
 		for(Map.Entry<String, Thread> me : workers.entrySet()){
-			if(me.getValue().getState() != Thread.State.TERMINATED){
+			if(me.getValue().getState() != Thread.State.TERMINATED){//线程执行完毕
 				return false;
 			}
 		}		

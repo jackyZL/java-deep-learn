@@ -12,7 +12,9 @@ import java.util.Random;
 public class Main {
 
 	public static void main(String[] args) {
-		
+
+		int threadCounts = Runtime.getRuntime().availableProcessors(); //获取当前可用的线程数
+		System.out.println(threadCounts);
 		Master master = new Master(new Worker(), 20);
 		
 		Random r = new Random();
