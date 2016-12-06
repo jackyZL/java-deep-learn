@@ -17,7 +17,8 @@ public class ScheduledJob {
     
     	Temp command = new Temp();
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        
+
+        // 当前任务，延迟5秒钟执行，而且每隔1秒钟去轮询着执行(可以实现一个简单的定时器功能)
         ScheduledFuture<?> scheduleTask = scheduler.scheduleWithFixedDelay(command, 5, 1, TimeUnit.SECONDS);
     
     }
