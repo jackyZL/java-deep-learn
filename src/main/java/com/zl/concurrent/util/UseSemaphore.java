@@ -16,6 +16,8 @@ import java.util.concurrent.Semaphore;
  *  可以根据当前的压力值测试到评估，在结合后期综合运维情况，估算出阈值
  *  ⑤ RT(response time) 请求响应时间，这个指标非常关键，直接索面前端用户体验，因此任何系统设计师都要降低时间
  *
+ *  峰值QPS = （总PV * 80%） / (60 * 60 * 24 * 20%)  一般采用的82原则
+ *
  *  Semaphore信号量可以用于限流，一般redis用的也比较多，用于限流
  */
 public class UseSemaphore {  
@@ -36,9 +38,9 @@ public class UseSemaphore {
                         semp.acquire();  // semp的构造函数传入的参数是5，表示可以获取5次，
                         System.out.println("Accessing: " + NO);  
                         //模拟实际业务逻辑
-                        Thread.sleep((long) (Math.random() * 10000));  
-                        // 访问完后，释放  
-                        semp.release();  
+                        Thread.sleep((long) (Math.random() * 10000));
+                        // 访问完后，释放许可
+                        semp.release();
                     } catch (InterruptedException e) {  
                     }  
                 }  

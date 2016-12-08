@@ -6,13 +6,13 @@ package com.zl.thread.sync06;
  */
 public class ChangeLock {
 
-	private String lock = "lock";
+	private String lock = "lock01";
 	
 	private void method(){
 		synchronized (lock) {
 			try {
 				System.out.println("当前线程 : "  + Thread.currentThread().getName() + "开始");
-				lock = "change lock"; // 修改该变量值，锁发生变化了，其他进程就可以进来执行了
+				lock = "change lock01"; // 修改该变量值，锁发生变化了，其他进程就可以进来执行了
 				Thread.sleep(2000);
 				System.out.println("当前线程 : "  + Thread.currentThread().getName() + "结束");
 			} catch (InterruptedException e) {
